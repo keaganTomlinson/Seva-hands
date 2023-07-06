@@ -1,0 +1,88 @@
+﻿@{
+    // Set up variables for your PayFast integration
+    string merchantId = "your_merchant_id";
+    string merchantKey = "your_merchant_key";
+    string returnUrl = "http://example.com/return";
+    string cancelUrl = "http://example.com/cancel";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>SEVA HANDS</title>
+
+    <!-- slider stylesheet -->
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link rel="stylesheet" href="~/css/responsive.css" />
+</head>
+<!-- Add your HTML form code here -->
+<style>
+    .message-box {
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        max-width: 400px;
+        margin: 0 auto;
+
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            display: block;
+        }
+
+  
+</style>
+<form method="post" action="https://www.payfast.co.za/eng/process">
+    <!-- Hidden PayFast fields -->
+    <input type="hidden" name="merchant_id" value="@merchantId" />
+    <input type="hidden" name="merchant_key" value="@merchantKey" />
+    <input type="hidden" name="return_url" value="@returnUrl" />
+    <input type="hidden" name="cancel_url" value="@cancelUrl" />
+    <input type="hidden" name="notify_url" value="http://example.com/notify" />
+
+    <!-- Donation Amount -->
+    <label for="amount">Donation Amount:</label>
+    <input type="text" name="amount" id="amount" />
+
+    <!-- Other form fields -->
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" />
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" />
+
+    <label for="phone">Phone:</label>
+    <input type="tel" name="phone" id="phone" />
+
+    <label for="message">Message:</label>
+    <textarea name="message" id="message" rows="4"></textarea>
+
+    <input type="submit" value="Donate" />
+</form>
+

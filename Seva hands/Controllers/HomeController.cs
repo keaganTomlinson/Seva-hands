@@ -21,6 +21,10 @@ namespace Seva_hands.Controllers
         {
             return View();
         }
+        public IActionResult Donate()
+        {
+            return View();
+        }
         public IActionResult Explore()
         {
             return View();
